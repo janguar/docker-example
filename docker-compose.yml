@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: docker-nginx
+    ports:
+      - '80:80'
+    volumes:
+      - ./code:/code # example html page
+      - .nginx/vhost:/etc/nginx/conf.d/default.conf #configuration of vhost for nginx
